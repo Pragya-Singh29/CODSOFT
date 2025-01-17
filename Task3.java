@@ -3,6 +3,8 @@ import java.util.Scanner;
 class ATM{
     private BankAccount account;
     Scanner sc= new Scanner(System.in);
+    private boolean isFirstRun = true;
+
     //Constructor to initialize the ATM with a BankAccount
     public ATM(BankAccount account){
         this.account=account;
@@ -10,7 +12,12 @@ class ATM{
 
     //Display the menu
     public void displayMenu(){
-        System.out.println("------------WELCOME TO OUT ATM-----------");
+        //To display this line only once until the user exit
+        if (isFirstRun) {
+            System.out.println("------------WELCOME TO OUR ATM-----------");
+            isFirstRun = false; 
+        }
+
         System.out.println("1. Withdraw");
         System.out.println("2. Deposit");
         System.out.println("3. Check Balance");
