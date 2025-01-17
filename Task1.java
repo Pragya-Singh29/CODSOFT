@@ -3,8 +3,7 @@ import java.util.Random;
 
 public class Task1 {
 
-    public static int playGame() {
-        Scanner sc = new Scanner(System.in);
+    public static int playGame(Scanner sc) {
         Random random = new Random();
         int randomNumber = random.nextInt(100) + 1;
         int attempts = 0;
@@ -55,7 +54,7 @@ public class Task1 {
         System.out.println("-------------WELCOME TO THE NUMBER GUESSING GAME--------------");
 
         while (playAgain) {
-            totalScore = playGame();
+            totalScore = playGame(sc);
             System.out.println("YOUR SCORE: " + totalScore);
 
             String response;
